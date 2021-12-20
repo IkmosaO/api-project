@@ -1,3 +1,20 @@
-/* h1 {
+h1 {
     color: rgb(0, 0, 0);
-} */
+}
+.gets {
+    background-color: rgb(67, 165, 108);
+
+}
+.posts {
+    background-color: rgb(186, 201, 122);
+}
+.puts {
+    background-color: rgb(201, 164, 122);
+}
+.deletes{
+    background-color: rgb(201, 122, 122);
+}
+.posts, .gets, .puts, .deletes {
+    padding: 5px;
+    margin: auto;
+}
