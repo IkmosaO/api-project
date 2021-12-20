@@ -1,0 +1,197 @@
+html 
+    include partials/head.pug 
+    body
+        img(src='spl-logo.png')
+        h1 2018 Smite World Championship Roster API Documentation
+        div(class='gets')
+            h2 Method 
+            p GET
+            h2 Route 
+            p http://localhost:1340/teams
+            h2 Description 
+            p Returns a list of all teams participating in the tournament 
+            h2 Response 
+            pre  
+                | [{
+                |      id: 1,
+                |      name:'eUnited',
+                |      region: 'North America',
+                |      head-coach: 'Cardiac'
+                |      sponsors: 'ASTRO Gaming'
+                |      createdAt: "2021-12-16T23:26:47.000Z",
+                |      updatedAt: "2021-12-16T23:26:47.000Z",
+                |      deletedAt: null
+                |  }, 
+                |  {
+                |      id: 2,
+                |      name:'Team RivaL',
+                |      region: 'North America',
+                |      head-coach: 'AlphaJackal'
+                |      sponsors: 'EGL'
+                |      createdAt: "2021-12-16T23:26:47.000Z",
+                |      updatedAt: "2021-12-16T23:26:47.000Z",
+                |      deletedAt: null
+                |  },
+                |  {
+                |      id: 3,
+                |      name:'Obey Alliance',
+                |      region: 'North America',
+                |      head-coach: 'Hayzer'
+                |      sponsors: 'Logitech'
+                |      createdAt: "2021-12-16T23:26:47.000Z",
+                |      updatedAt: "2021-12-16T23:26:47.000Z",
+                |      deletedAt: null
+                |  }]
+            h2 Method 
+            p GET
+            h2 Route 
+            p http://localhost:1340/teams/{teamName}
+            h2 Description 
+            p Returns the team who's name value matches the provided value in the route. The description includes the players and their positions
+            h2 Response 
+            pre  
+                |  [{
+                |       solo: 'Benji',
+                |       mid: 'Venenu',
+                |       jungle: 'Screammmmm',
+                |       support: 'PolarBearMike',
+                |       hunter: 'PandaCat'
+                |
+                |  }]
+        div(class='posts')
+            h2 Method 
+            p POST
+            h2 Route 
+            p http://localhost:1340/teams
+            h2 Headers
+            p Content-Type: application/json
+            h2 Body 
+            pre 
+                |  {
+                |      name:'Jade Dragons',
+                |      region: 'North America',
+                |      head-coach: 'Cabom'
+                |      sponsors: 'GFuel'
+                |  }
+            h2 Description 
+            p Creates a new team from data provided in the body
+            h2 Response 
+            pre  
+                |  {
+                |      id: 10,
+                |      name:'Jade Dragons',
+                |      region: 'North America',
+                |      head-coach: 'Cabom'
+                |      sponsors: 'GFuel'
+                |      createdAt: "2021-12-16T23:26:47.000Z",
+                |      updatedAt: "2021-12-16T23:26:47.000Z",
+                |      deletedAt: null
+                |  }
+            h2 Method 
+            p POST
+            h2 Route 
+            p http://localhost:1340/teams/{teamName}
+            h2 Headers
+            p Content-Type: application/json
+            h2 Body 
+            pre 
+                |  [{
+                |      solo: 'fineOkay',
+                |      mid: 'Hurriwind',
+                |      jungle: 'Sam4soccer2',
+                |      support: 'PolarBearMike',
+                |      hunter: 'PandaCat'
+                |
+                |  }]
+            h2 Description 
+            p Creates a new team from data provided in the body
+            h2 Response 
+            pre  
+                |  {
+                |      solo: 'fineOkay',
+                |      mid: 'Hurriwind',
+                |      jungle: 'Sam4soccer2',
+                |      support: 'PolarBearMike',
+                |      hunter: 'PandaCat'
+                |      createdAt: "2021-12-16T23:26:47.000Z",
+                |      updatedAt: "2021-12-16T23:26:47.000Z",
+                |      deletedAt: null
+                |  }
+        div(class='puts')
+            h2 Method 
+            p PUT
+            h2 Route 
+            p http://localhost:1340/teams/{id}
+            h2 Headers
+            p Content-Type: application/json
+            h2 Body 
+            pre 
+                |  {
+                |      name:'eUnited',
+                |      region: 'South America',
+                |      head-coach: 'Blazer'
+                |      sponsors: 'AlienWare'
+                |  }
+            h2 Description 
+            p Updates an existing team by the team's ID
+            h2 Response 
+            pre  
+                |  {
+                |      name:'eUnited',
+                |      region: 'South America',
+                |      head-coach: 'Blazer'
+                |      sponsors: 'AlienWare'
+                |  }
+            h2 Method 
+            p PUT
+            h2 Route 
+            p http://localhost:1340/teams/{teamName}
+            h2 Headers
+            p Content-Type: application/json
+            h2 Body 
+            pre 
+                |  {
+                |       solo: 'maniaKK',
+                |       mid: 'PrettyPrime',
+                |       jungle: 'Masked',
+                |       support: 'Genetics',
+                |       hunter: 'Emilitoo'
+                |  }
+            h2 Description 
+            p Updates an existing team's roster by the team's name
+            h2 Response 
+            pre  
+                |  {
+                |       solo: 'maniaKK',
+                |       mid: 'PrettyPrime',
+                |       jungle: 'Masked',
+                |       support: 'Genetics',
+                |       hunter: 'Emilitoo'
+                |  }
+        div(class='deletes')
+            h2 Method 
+            p DELETE
+            h2 Route 
+            p http://localhost:1340/teams/{id}
+            h2 Headers
+            p Content-Type: application/json
+            h2 Description 
+            p Deletes an existing team by the team's ID
+            h2 Response 
+            pre  
+                |  {
+                |      'Success' 
+                |  }
+            h2 Method 
+            p DELETE
+            h2 Route 
+            p http://localhost:1340/teams/{teamName}
+            h2 Headers
+            p Content-Type: application/json
+            h2 Description 
+            p Deletes an existing team's roster by the team's name
+            h2 Response 
+            pre  
+                |  {
+                |       'Success'
+                |  }
