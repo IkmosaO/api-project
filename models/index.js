@@ -14,7 +14,7 @@ const Regions = RegionsModel(connection, Sequelize)
 const Teams = TeamsModel(connection, Sequelize, Regions)
 
 Regions.hasMany(Teams)
-Teams.belongTo(Regions)
+Teams.belongsTo(Regions)
 
 
 module.exports = {

@@ -36,15 +36,15 @@ const getTeamById = async (request, response) => {
 const createNewTeam = async (request, response) => {
   try {
     const {
-      regionId, name, headCoach, sponsors, solo, mid, jungle, support, hunter
+      regionsId, name, headCoach, sponsors, solo, mid, jungle, support, hunter
     } = request.body
 
-    if (!regionId || !name || !headCoach || !sponsors || !solo || !mid || !jungle || !support || !hunter) {
-      return response.status(400).send('Missing one of the following: regionId, name, headCoach, sponsors, solo, mid, jungle, support, hunter')
+    if (!regionsId || !name || !headCoach || !sponsors || !solo || !mid || !jungle || !support || !hunter) {
+      return response.status(400).send('Missing one of the following: regionsId, name, headCoach, sponsors, solo, mid, jungle, support, hunter')
     }
 
     const newTeam = await models.Teams.create({
-      regionId, name, headCoach, sponsors, solo, mid, jungle, support, hunter
+      regionsId, name, headCoach, sponsors, solo, mid, jungle, support, hunter
     })
 
     return response.status(201).send(newTeam)
@@ -58,13 +58,13 @@ const createNewTeam = async (request, response) => {
 const updateTeam = async (request, response) => {
   try {
     const {
-      regionId, name, headCoach, sponsors, solo, mid, jungle, support, hunter
+      regionsId, name, headCoach, sponsors, solo, mid, jungle, support, hunter
     } = request.body
 
     const { id } = request.params
 
-    if (!regionId || !name || !headCoach || !sponsors || !solo || !mid || !jungle || !support || !hunter) {
-      return response.status(400).send('Missing one of the following: regionId, name, headCoach, sponsors, solo, mid, jungle, support, hunter')
+    if (!regionsId || !name || !headCoach || !sponsors || !solo || !mid || !jungle || !support || !hunter) {
+      return response.status(400).send('Missing one of the following: regionsId, name, headCoach, sponsors, solo, mid, jungle, support, hunter')
     }
 
     const team = await models.Teams.findOne({ where: { id } })
@@ -72,7 +72,7 @@ const updateTeam = async (request, response) => {
     if (!team) return response.status(400).send(`Unable to find the team with id: ${id} to update`)
 
     await team.update({
-      regionId, name, headCoach, sponsors, solo, mid, jungle, support, hunter
+      regionsId, name, headCoach, sponsors, solo, mid, jungle, support, hunter
     })
 
     return response.status(201).send('The team has been successfully updated')

@@ -16,8 +16,8 @@ app.get('/api/documentation', (request, response) => {
   return response.render('index')
 })
 
-app.use('/api/team', teamRouters)
-app.use('/api/team', regionRouters)
+app.use('/api/teams', teamRouters)
+app.use('/api/regions', regionRouters)
 
 app.all('*', (request, response) => {
   return response.sendStatus(404)

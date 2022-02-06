@@ -14,17 +14,16 @@ const getAllRegions = async (request, response) => {
   }
 }
 
-
 const getRegionById = async (request, response) => {
   try {
     const { id } = request.params
 
-    const regionId = await models.Regions.findOne({
+    const foundRegion = await models.Regions.findOne({
       where: { id }
     })
 
-    return regionId
-      ? response.send(regionId)
+    return foundRegion
+      ? response.send(foundRegion)
       : response.status(404).send('No region found, please try again')
   } catch (e) {
     return response.status(500).send('Error trying to retrieve region, please try again')
