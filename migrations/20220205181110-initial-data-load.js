@@ -8,64 +8,136 @@ module.exports = {
      */
     await queryInterface.bulkInsert('regions', [
       {
-        name: 'Australia'
+        name: 'North America'
       },
       {
-        name: 'China'
+        name: 'Europe'
+      },
+      {
+        name: 'Brazil'
+      },
+      {
+        name: 'Latin America'
+      },
+      {
+        name: 'Oceania'
       },
       {
         name: 'SEA'
-      },
-      {
-        name: 'Mediterranean'
       }
     ])
 
     return queryInterface.bulkInsert('teams', [
       {
-        regionsId: 1,
-        name: 'Team One',
-        headCoach: 'Team One Coach',
-        sponsors: 'Team One Sponsor',
-        solo: 'Team One Solo',
-        mid: 'Team One Mid',
-        jungle: 'Team One Jungle',
-        support: 'Team One Support',
-        hunter: 'Team One Hunter'
+        regionId: 1,
+        name: 'eUnited',
+        headCoach: 'Card1ac',
+        sponsor: 'ASTRO Gaming',
+        solo: 'Benji',
+        mid: 'Baskin',
+        jungle: 'Screammmmm',
+        support: 'PolarBearMike',
+        hunter: 'PandaCat'
       },
       {
-        regionsId: 2,
-        name: 'Team Two',
-        headCoach: 'Team Two Coach',
-        sponsors: 'Team Two Sponsor',
-        solo: 'Team Two Solo',
-        mid: 'Team Two Mid',
-        jungle: 'Team Two Jungle',
-        support: 'Team Two Support',
-        hunter: 'Team Two Hunter'
+        regionId: 1,
+        name: 'Team RivaL',
+        headCoach: 'AlphaJackal',
+        sponsor: 'Esportsify',
+        solo: 'Deathwalker',
+        mid: 'Wlfy',
+        jungle: 'iceicebabyy',
+        support: 'KaLaS',
+        hunter: 'Vote'
       },
       {
-        regionsId: 3,
-        name: 'Team Three',
-        headCoach: 'Team Three Coach',
-        sponsors: 'Team Three Sponsor',
-        solo: 'Team Three Solo',
-        mid: 'Team Three Mid',
-        jungle: 'Team Three Jungle',
-        support: 'Team Three Support',
-        hunter: 'Team Three Hunter'
+        regionId: 1,
+        name: 'Obey Alliance',
+        headCoach: 'Hayzer',
+        sponsor: 'N/A',
+        solo: 'Xaliea',
+        mid: 'PrettyPriMe',
+        jungle: 'CaptainTwig',
+        support: 'EmilZy',
+        hunter: 'Ataraxia'
       },
       {
-        regionsId: 4,
-        name: 'Team Four',
-        headCoach: 'Team Four Coach',
-        sponsors: 'Team Four Sponsor',
-        solo: 'Team Four Solo',
-        mid: 'Team Four Mid',
-        jungle: 'Team Four Jungle',
-        support: 'Team Four Support',
-        hunter: 'Team Four Hunter'
+        regionId: 2,
+        name: 'NRG Esports',
+        headCoach: 'Badgah',
+        sponsor: 'Events DC',
+        solo: 'maniaKK',
+        mid: 'Homiefe',
+        jungle: 'Adapting',
+        support: 'EmilZy',
+        hunter: 'emilitoo'
       },
+      {
+        regionId: 1,
+        name: 'Elevate',
+        headCoach: 'Navajo',
+        sponsor: 'G Fuel',
+        solo: 'N0Numbers',
+        mid: 'DeathPanter',
+        jungle: 'Cherryo',
+        support: 'Dardez',
+        hunter: 'Jermain'
+      },
+      {
+        regionId: 3,
+        name: 'Black Dragons',
+        headCoach: 'aimless',
+        sponsor: 'N/A',
+        solo: 'Kliz',
+        mid: 'Nann',
+        jungle: 'oShip',
+        support: 'PIBE',
+        hunter: 'MarcelZ'
+      },
+      {
+        regionId: 1,
+        name: 'Luminosity Gaming',
+        headCoach: 'N/A',
+        sponsor: 'HyperX',
+        solo: 'Aquarius',
+        mid: 'Baskin',
+        jungle: 'Mask',
+        support: 'JeffHindla',
+        hunter: 'BaRRaCCuDDa'
+      },
+      {
+        regionId: 4,
+        name: 'Nocturns Gaming',
+        headCoach: 'N/A',
+        sponsor: 'GX Gaming',
+        solo: 'Beltway',
+        mid: 'N0zq',
+        jungle: 'Sm1tero',
+        support: 'Noitulover',
+        hunter: 'Zaionsix'
+      },
+      {
+        regionId: 5,
+        name: 'Scylla Esports',
+        headCoach: 'N/A',
+        sponsor: 'HyperX Gaming',
+        solo: 'Kayo',
+        mid: 'Shred',
+        jungle: 'Envisionise',
+        support: 'Torreyskiez',
+        hunter: 'MingyuSeo '
+      },
+      {
+        regionId: 6,
+        name: 'Entity Gaming',
+        headCoach: 'N/A',
+        sponsor: 'ASUS',
+        solo: 'Parad1ddle',
+        mid: 'SirEclipse',
+        jungle: 'iApex',
+        support: 'MashuPoi',
+        hunter: 'Kamiru'
+      }
     ])
   },
 

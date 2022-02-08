@@ -7,37 +7,37 @@ html
             h2 Method 
             p GET
             h2 Route 
-            p http://localhost:1340/teams
+            p http://localhost:1340/api/teams
             h2 Description 
             p Returns a list of all teams participating in the tournament 
             h2 Response 
             pre  
                 | [{
                 |      id: 1,
+                |      regionId: 1,
                 |      name:'eUnited',
-                |      region: 'North America',
                 |      head-coach: 'Cardiac'
                 |      sponsors: 'ASTRO Gaming'
+                |      solo: 'Benji',
+                |      mid: 'Venenu',
+                |      jungle: 'Screammmmm',
+                |      support: 'PolarBearMike',
+                |      hunter: 'PandaCat'
                 |      createdAt: "2021-12-16T23:26:47.000Z",
                 |      updatedAt: "2021-12-16T23:26:47.000Z",
                 |      deletedAt: null
                 |  }, 
                 |  {
                 |      id: 2,
+                |      regionId: 1,
                 |      name:'Team RivaL',
-                |      region: 'North America',
                 |      head-coach: 'AlphaJackal'
                 |      sponsors: 'EGL'
-                |      createdAt: "2021-12-16T23:26:47.000Z",
-                |      updatedAt: "2021-12-16T23:26:47.000Z",
-                |      deletedAt: null
-                |  },
-                |  {
-                |      id: 3,
-                |      name:'Obey Alliance',
-                |      region: 'North America',
-                |      head-coach: 'Hayzer'
-                |      sponsors: 'Logitech'
+                |      solo: 'Deathwalker',
+                |      mid: 'Wlfy',
+                |      jungle: 'iceicebabyy ',
+                |      support: 'KaLas',
+                |      hunter: 'Vote'
                 |      createdAt: "2021-12-16T23:26:47.000Z",
                 |      updatedAt: "2021-12-16T23:26:47.000Z",
                 |      deletedAt: null
@@ -46,33 +46,85 @@ html
             h2 Method 
             p GET
             h2 Route 
-            p http://localhost:1340/teams/{teamName}
+            p http://localhost:1340/api/teams/:id
             h2 Description 
-            p Returns the team who's name value matches the provided value in the route. The description includes the players and their positions
+            p Returns the team who's id matches the request.
             h2 Response 
             pre  
                 |  [{
-                |       solo: 'Benji',
-                |       mid: 'Venenu',
-                |       jungle: 'Screammmmm',
-                |       support: 'PolarBearMike',
-                |       hunter: 'PandaCat'
+                |      id: 1,
+                |      regionId: 1,
+                |      name:'eUnited',
+                |      head-coach: 'Cardiac'
+                |      sponsors: 'ASTRO Gaming'
+                |      solo: 'Benji',
+                |      mid: 'Venenu',
+                |      jungle: 'Screammmmm',
+                |      support: 'PolarBearMike',
+                |      hunter: 'PandaCat'
+                |      createdAt: "2021-12-16T23:26:47.000Z",
+                |      updatedAt: "2021-12-16T23:26:47.000Z",
+                |      deletedAt: null
                 |
+                |  }]
+        div(class='gets')
+            h2 Method 
+            p GET
+            h2 Route 
+            p http://localhost:1340/api/regions
+            h2 Description 
+            p Returns a list of all teams participating in the tournament 
+            h2 Response 
+            pre  
+                | [{
+                |      id: 1,
+                |      name: "Australia",
+                |      createdAt: "2022-02-05T22:30:19.000Z",
+                |      updatedAt: "2022-02-05T22:30:19.000Z",
+                |      deletedAt: null
+                |  }, 
+                |  {
+                |      id: 2,
+                |      name: "China",
+                |      createdAt: "2022-02-05T22:30:19.000Z",
+                |      updatedAt: "2022-02-05T22:30:19.000Z",
+                |      deletedAt: null
+                |  }]
+        div(class='gets')
+            h2 Method 
+            p GET
+            h2 Route 
+            p http://localhost:1340/api/regions/:id
+            h2 Description 
+            p Returns the regions who's id matches the request.
+            h2 Response 
+            pre  
+                | [{
+                |      id: 1,
+                |      name: "Australia",
+                |      createdAt: "2022-02-05T22:30:19.000Z",
+                |      updatedAt: "2022-02-05T22:30:19.000Z",
+                |      deletedAt: null
                 |  }]
         div(class='posts')
             h2 Method 
             p POST
             h2 Route 
-            p http://localhost:1340/teams
+            p http://localhost:1340/api/teams
             h2 Headers
             p Content-Type: application/json
             h2 Body 
             pre 
                 |  {
+                |      regionId: 1,
                 |      name:'Jade Dragons',
-                |      region: 'North America',
-                |      head-coach: 'Cabom'
-                |      sponsors: 'GFuel'
+                |      head-coach: 'Caboom'
+                |      sponsors: 'HiRez Studios'
+                |      solo: 'fineOkay',
+                |      mid: 'Hurriwind',
+                |      jungle: 'Sam4soccer2',
+                |      support: 'PolarBearMike',
+                |      hunter: 'PandaCat'
                 |  }
             h2 Description 
             p Creates a new team from data provided in the body
@@ -80,10 +132,15 @@ html
             pre  
                 |  {
                 |      id: 10,
+                |      regionId: 1,
                 |      name:'Jade Dragons',
-                |      region: 'North America',
-                |      head-coach: 'Cabom'
-                |      sponsors: 'GFuel'
+                |      head-coach: 'Caboom'
+                |      sponsors: 'HiRez Studios'
+                |      solo: 'fineOkay',
+                |      mid: 'Hurriwind',
+                |      jungle: 'Sam4soccer2',
+                |      support: 'PolarBearMike',
+                |      hunter: 'PandaCat'
                 |      createdAt: "2021-12-16T23:26:47.000Z",
                 |      updatedAt: "2021-12-16T23:26:47.000Z",
                 |      deletedAt: null
@@ -92,90 +149,83 @@ html
             h2 Method 
             p POST
             h2 Route 
-            p http://localhost:1340/teams/{teamName}
+            p http://localhost:1340/api/regions
             h2 Headers
             p Content-Type: application/json
             h2 Body 
             pre 
                 |  [{
-                |      solo: 'fineOkay',
-                |      mid: 'Hurriwind',
-                |      jungle: 'Sam4soccer2',
-                |      support: 'PolarBearMike',
-                |      hunter: 'PandaCat'
+                |      name: "EU",
                 |
                 |  }]
             h2 Description 
-            p Creates a new team from data provided in the body
+            p Creates a new region from data provided in the body
             h2 Response 
             pre  
                 |  {
-                |      solo: 'fineOkay',
-                |      mid: 'Hurriwind',
-                |      jungle: 'Sam4soccer2',
-                |      support: 'PolarBearMike',
-                |      hunter: 'PandaCat'
-                |      createdAt: "2021-12-16T23:26:47.000Z",
-                |      updatedAt: "2021-12-16T23:26:47.000Z",
+                |      name: "EU",
+                |      createdAt: "2022-02-05T22:30:19.000Z",
+                |      updatedAt: "2022-02-05T22:30:19.000Z",
                 |      deletedAt: null
                 |  }
         div(class='puts')
             h2 Method 
             p PUT
             h2 Route 
-            p http://localhost:1340/teams/{id}
+            p http://localhost:1340/api/teams/:id
             h2 Headers
             p Content-Type: application/json
             h2 Body 
             pre 
                 |  {
-                |      name:'eUnited',
-                |      region: 'South America',
-                |      head-coach: 'Blazer'
-                |      sponsors: 'AlienWare'
+                |      regionId: 1,
+                |      name:'zUnited',
+                |      head-coach: 'Cardiac'
+                |      sponsors: 'Tecknet'
+                |      solo: 'Benji',
+                |      mid: 'Venenu',
+                |      jungle: 'Screammmmm',
+                |      support: 'PolarBearMike',
+                |      hunter: 'Variety'
                 |  }
             h2 Description 
             p Updates an existing team by the team's ID
             h2 Response 
             pre  
-                |  {
-                |      name:'eUnited',
-                |      region: 'South America',
-                |      head-coach: 'Blazer'
-                |      sponsors: 'AlienWare'
+                |      regionId: 1,
+                |      name:'zUnited',
+                |      head-coach: 'Cardiac'
+                |      sponsors: 'Tecknet'
+                |      solo: 'Benji',
+                |      mid: 'Venenu',
+                |      jungle: 'Screammmmm',
+                |      support: 'PolarBearMike',
+                |      hunter: 'Variety'
                 |  }
         div(class='puts')
             h2 Method 
             p PUT
             h2 Route 
-            p http://localhost:1340/teams/{teamName}
+            p http://localhost:1340/api/regions/:id
             h2 Headers
             p Content-Type: application/json
             h2 Body 
             pre 
                 |  {
-                |       solo: 'maniaKK',
-                |       mid: 'PrettyPrime',
-                |       jungle: 'Masked',
-                |       support: 'Genetics',
-                |       hunter: 'Emilitoo'
+                |       name: 'South Africa'
                 |  }
             h2 Description 
-            p Updates an existing team's roster by the team's name
+            p Updates an existing region by the regions's name
             h2 Response 
             pre  
                 |  {
-                |       solo: 'maniaKK',
-                |       mid: 'PrettyPrime',
-                |       jungle: 'Masked',
-                |       support: 'Genetics',
-                |       hunter: 'Emilitoo'
+                |       solo: 'South Africa'
                 |  }
         div(class='deletes')
             h2 Method 
             p DELETE
             h2 Route 
-            p http://localhost:1340/teams/{id}
+            p http://localhost:1340/api/teams/:id
             h2 Headers
             p Content-Type: application/json
             h2 Description 
@@ -189,7 +239,7 @@ html
             h2 Method 
             p DELETE
             h2 Route 
-            p http://localhost:1340/teams/{teamName}
+            p http://localhost:1340/api/regions/:id
             h2 Headers
             p Content-Type: application/json
             h2 Description 

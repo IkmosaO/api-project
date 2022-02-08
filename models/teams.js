@@ -1,10 +1,10 @@
 const Teams = (connection, Sequelize, Regions) => {
   return connection.define('teams', {
     id: { type: Sequelize.INTEGER, autoIncrement: true, primaryKey: true },
-    regionsId: { type: Sequelize.INTEGER, references: { model: Regions, key: 'id' } },
+    regionId: { type: Sequelize.INTEGER, references: { model: Regions, key: 'id' } },
     name: { type: Sequelize.STRING, allowNull: false },
-    headCoach: { type: Sequelize.STRING, allowNull: false },
-    sponsors: { type: Sequelize.STRING, allowNull: false },
+    headCoach: { type: Sequelize.STRING, allowNull: false, defaultValue: 'N/A' },
+    sponsor: { type: Sequelize.STRING, allowNull: false, defaultValue: 'N/A' },
     solo: { type: Sequelize.STRING, allowNull: false },
     mid: { type: Sequelize.STRING, allowNull: false },
     jungle: { type: Sequelize.STRING, allowNull: false },
