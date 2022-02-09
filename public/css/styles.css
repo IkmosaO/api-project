@@ -1,5 +1,6 @@
 h1 {
     color: rgb(0, 0, 0);
+    text-align: center;
 }
 .gets {
     background-color: rgb(67, 165, 108);
@@ -15,6 +16,11 @@ h1 {
     background-color: rgb(201, 122, 122);
 }
 .posts, .gets, .puts, .deletes {
-    padding: 5px;
-    margin: auto;
+    border: 2px solid black;
+    padding: 10px;
+    margin: 10px;
+    border-spacing: 5px;
+    background-size: auto;
+    filter: drop-shadow(0 0 0.1rem rgb(0, 0, 0));
+
 }
