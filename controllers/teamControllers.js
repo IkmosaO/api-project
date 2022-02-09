@@ -39,8 +39,8 @@ const createNewTeam = async (request, response) => {
       regionId, name, headCoach, sponsor, solo, mid, jungle, support, hunter
     } = request.body
 
-    if (!regionId || !name || !headCoach || !sponsor || !solo || !mid || !jungle || !support || !hunter) {
-      return response.status(400).send('Missing one of the following: regionId, name, headCoach, sponsor, solo, mid, jungle, support, hunter')
+    if (!regionId || !name || !solo || !mid || !jungle || !support || !hunter) {
+      return response.status(400).send('Missing one of the following: regionId, name, solo, mid, jungle, support, hunter')
     }
 
     const newTeam = await models.Teams.create({
