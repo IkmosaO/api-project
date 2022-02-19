@@ -4,7 +4,9 @@ const models = require('../models')
 
 const getAllTeams = async (request, response) => {
   try {
-    const getAllTeams = await models.Teams.findAll()
+    const getAllTeams = await models.Teams.findAll({
+      include: [{ model: models.Regions }]
+    })
 
     return response.status(200).send(getAllTeams)
   } catch (e) {
@@ -20,7 +22,8 @@ const getTeamById = async (request, response) => {
     const { id } = request.params
 
     const getTeamById = await models.Teams.findOne({
-      where: { id }
+      where: { id },
+      include: [{ model: models.Regions }]
     })
 
     return getTeamById

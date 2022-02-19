@@ -9,7 +9,7 @@ html
             h2 Route 
             p http://localhost:1340/api/teams
             h2 Description 
-            p Returns a list of all teams participating in the tournament 
+            p Returns a list of all teams participating in the tournament including their regions
             h2 Response 
             pre  
                 | [{
@@ -25,7 +25,13 @@ html
                 |      hunter: 'PandaCat'
                 |      createdAt: "2021-12-16T23:26:47.000Z",
                 |      updatedAt: "2021-12-16T23:26:47.000Z",
-                |      deletedAt: null
+                |      deletedAt: null,
+                |      region: {
+                |           id: 1,
+                |           name: "North America",
+                |           createdAt: "2022-02-09T02:31:57.000Z",
+                |           updatedAt: "2022-02-09T02:31:57.000Z",
+                |           deletedAt: null
                 |  }, 
                 |  {
                 |      id: 2,
@@ -40,7 +46,14 @@ html
                 |      hunter: 'Vote'
                 |      createdAt: "2021-12-16T23:26:47.000Z",
                 |      updatedAt: "2021-12-16T23:26:47.000Z",
-                |      deletedAt: null
+                |      deletedAt: null,
+                |      region: {
+                |           id: 1,
+                |           name: "North America",
+                |           createdAt: "2022-02-09T02:31:57.000Z",
+                |           updatedAt: "2022-02-09T02:31:57.000Z",
+                |           deletedAt: null
+                |  }, 
                 |  }]
         div(class='gets')
             h2 Method 
@@ -48,7 +61,7 @@ html
             h2 Route 
             p http://localhost:1340/api/teams/:id
             h2 Description 
-            p Returns the team who's id matches the request.
+            p Returns the team who's id matches the request including a team's respective region.
             h2 Response 
             pre  
                 |  [{
@@ -64,7 +77,14 @@ html
                 |      hunter: 'PandaCat'
                 |      createdAt: "2021-12-16T23:26:47.000Z",
                 |      updatedAt: "2021-12-16T23:26:47.000Z",
-                |      deletedAt: null
+                |      deletedAt: null,
+                |      region: {
+                |           id: 1,
+                |           name: "North America",
+                |           createdAt: "2022-02-09T02:31:57.000Z",
+                |           updatedAt: "2022-02-09T02:31:57.000Z",
+                |           deletedAt: null
+                |  }, 
                 |
                 |  }]
         div(class='gets')
