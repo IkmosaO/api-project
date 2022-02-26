@@ -1,47 +1,41 @@
-// // 1 import react
-// // 2 create a function (same as the name of your file)
-// // 3 return some JSX
-// // 4 export that function
+import React from "react";
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import Paper from '@mui/material/Paper';
+import Typography from "@mui/material/Typography";
+import { useNavigate } from "react-router-dom";
 
-// import React from "react";
-// import Table from 'react-bootstrap/Table';
+const RosterTable = (props) => {
+    const { teams } = props
 
-// const RosterTable = () => {
+        let navigate = useNavigate();
 
-//     <Table striped bordered hover>
-//     <thead>
-//       <tr>
-//         <th>name</th>
-//         <th>region</th>
-//         <th>headCoach</th>
-//         <th>sponsor</th>
-//         <th>solo</th>
-//         <th>mid</th>
-//         <th>jungle</th>
-//         <th>support</th>
-//         <th>hunter</th>
-//       </tr>
-//     </thead>
-//     <tbody>
-//         {
-//             teams.roster.map(team => (
-//               <tr key={team.id}>
-//               <td>{team.name}</td>
-//               <td>{team.region.name}</td>
-//               <td>{team.headCoach}</td>
-//               <td>{team.sponsor}</td>
-//               <td>{team.solo}</td>
-//               <td>{team.mid}</td>
-//               <td>{team.jungle}</td>
-//               <td>{team.support}</td>
-//               <td>{team.hunter}</td>
-  
-//             </tr>
-//             ))
-//         }
-  
-//     </tbody>
-//   </Table>
-// }
+    return (
+        <TableContainer sx={{ minWidth: 400, maxWidth: 500 }} component={Paper}>
+              <Table aria-label="simple table">
+                <TableHead>
+                  <TableRow>
+                    <TableCell align='center'> <Typography>Team Names</Typography>
+                    </TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {teams.map((team) => (
+                    <TableRow
+                      key={team.id} >
+                      <TableCell align='center' onClick={() => {navigate(`/teams/${team['id']}`)}}>
+                        {team.name}
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </TableContainer>
+    )
+}
 
-// export default RosterTable 
+export default RosterTable 

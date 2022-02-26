@@ -4,10 +4,13 @@
 // 4 export that function
 
 import React from "react";
+import Typography from "@mui/material/Typography";
 
 const Title = () => {
     return (
-        <h1>2018 Smite World Championship Roster</h1>
+        <div className="title">
+        <Typography variant='h4' sx={{ color: 'text.secondary', fontWeight: 'medium' }}>QUALIFIED TEAMS</Typography>
+        </div>
     )
 }
 
