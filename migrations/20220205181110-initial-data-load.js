@@ -69,7 +69,7 @@ module.exports = {
         solo: 'maniaKK',
         mid: 'Homiefe',
         jungle: 'Adapting',
-        support: 'EmilZy',
+        support: 'iRaffer',
         hunter: 'emilitoo'
       },
       {
